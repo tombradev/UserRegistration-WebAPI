@@ -41,12 +41,12 @@ namespace WebAPI.Controllers
 
             try
             {
-                var result = await _UserManager.CreateAsync(applicationUser, model.Password);
+                var result =await _UserManager.CreateAsync(applicationUser, model.Password);
                 return Ok(result);
             }
-            catch (Exception On)
+            catch (Exception ex)
             {
-                throw On;
+                throw ex;
             }
         }
     }
