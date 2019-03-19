@@ -33,6 +33,7 @@ namespace WebAPI
 
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddEntityFrameworkStores<AuthenticationContext>(); // This add identity core with EF functionality
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
