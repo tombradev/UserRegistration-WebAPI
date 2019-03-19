@@ -30,6 +30,9 @@ namespace WebAPI
 
             services.AddDbContext<AuthenticationContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"))); // injecting the Connection that located in the appsetting.json
+
+            services.AddDefaultIdentity<ApplicationUser>()
+                .AddEntityFrameworkStores<AuthenticationContext>(); // This add identity core with EF functionality
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +43,7 @@ namespace WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseAuthentication();
             app.UseMvc();
         }
     }
